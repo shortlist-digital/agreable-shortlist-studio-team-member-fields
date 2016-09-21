@@ -1,0 +1,13 @@
+{
+    "name": "shortlist-digital/agreable-shortlist-studio-team-member-fields",
+    "description": "Add a team member widget to the page and post widget selectors",
+    "type": "wordpress-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jon Sherrard",
+            "email": "jon@andthats.it"
+        }
+    ],
+    "require": {}
+}
