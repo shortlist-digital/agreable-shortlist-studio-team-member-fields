@@ -31,5 +31,5 @@ $widget_config = array(
 );
 
 
-$widget_config['content-types'] = array('post', 'page'); // section, article
+$widget_config['content-types'] = array('post', 'category', 'page'); // section, article
 $widget_config['content-sizes'] = array('main');
