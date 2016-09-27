@@ -17,8 +17,8 @@ class AgreableShortlistStudioTeamMemberFields
     public function __construct()
     {
         add_filter('acf/rest_api/page/get_fields', array($this, 'add_acf_to_team_member'), 10, 3);
-        add_filter('acf/rest_api/post/get_fields', array($this, 'add_acf_to_team_member'), 10, 3);
-        add_filter('acf/rest_api/category/get_fields', array($this, 'add_acf_to_team_member'), 10, 3);
+        //add_filter('acf/rest_api/post/get_fields', array($this, 'add_acf_to_team_member'), 10, 3);
+        //add_filter('acf/rest_api/category/get_fields', array($this, 'add_acf_to_team_member'), 10, 3);
     }
 
 
@@ -30,8 +30,10 @@ class AgreableShortlistStudioTeamMemberFields
 
         if (isset($data['acf']['widgets'])) {
             foreach ($data['acf']['widgets'] as &$widget) {
-                $userAcf = get_fields("user_{$widget['team_member']['ID']}");    // get fields from post
-                $widget['acf'] = $userAcf;
+                if ($widget['acf_fc_layout'] == 'team_member') {
+                    $userAcf = get_fields("user_{$widget['team_member']['ID']}");    // get fields from post
+                    $widget['acf'] = $userAcf;
+                }
             }
         }
 
